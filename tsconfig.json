@@ -2,7 +2,7 @@
     "extends": "@tsconfig/node22",
     "compilerOptions": {
         "target": "es6",
-        "strict": false,
+        "strict": true,
         "allowJs": true,
         "rootDir": ".",
         "declaration": true,
