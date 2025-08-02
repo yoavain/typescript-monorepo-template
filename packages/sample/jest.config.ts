@@ -2,15 +2,14 @@ import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
     roots: [
-        "<rootDir>/unit_test"
+        "<rootDir>/test"
     ],
     testMatch: [
         "**/*+(T|.t)est.+(ts|js)"
     ],
     transform: {
         "^.+\\.(ts|js)$": ["ts-jest", {
-            tsconfig: "tsconfig.json",
-            isolatedModules: true
+            tsconfig: "tsconfig.json"
         }]
     },
     collectCoverage: true,

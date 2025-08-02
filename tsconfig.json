@@ -1,16 +1,17 @@
 {
-  "extends": "@tsconfig/node22",
-  "compilerOptions": {
-    "target": "es6",
-    "strict": false,
-    "allowJs": true,
-    "rootDir": ".",
-    "declaration": true,
-    "verbatimModuleSyntax": false,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true
-  },
-  "include": ["scripts/**/*", "jest.config.ts"],
-  "exclude": ["node_modules"]
+    "extends": "@tsconfig/node22",
+    "compilerOptions": {
+        "target": "es6",
+        "strict": false,
+        "allowJs": true,
+        "rootDir": ".",
+        "declaration": true,
+        "verbatimModuleSyntax": false,
+        "sourceMap": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "isolatedModules": true
+    },
+    "include": ["scripts/**/*", "jest.config.ts"],
+    "exclude": ["node_modules"]
 }
