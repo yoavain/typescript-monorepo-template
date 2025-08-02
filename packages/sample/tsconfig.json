@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "strict": false,
+    "rootDir": ".",
+    "declaration": true,
+    "verbatimModuleSyntax": false,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*", "test/**/*", "*.ts"],
+  "exclude": ["node_modules"]
+}

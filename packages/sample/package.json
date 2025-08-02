@@ -1,0 +1,48 @@
+{
+  "name": "@yoavain/sample",
+  "version": "1.0.0",
+  "description": "Sample module for monorepo",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "prepublish": "tsc",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc --build tsconfig.build.json",
+    "postbuild": "typedoc --out dist/docs src",
+    "test": "jest",
+    "unit_test": "jest test/unit_test",
+    "integration_test": "jest test/integration_test",
+    "eslint": "eslint -c .eslintrc.json --ext .ts,.js src/ test/",
+    "eslint-fix": "npm run eslint -- --fix",
+    "type-check": "tsc --build tsconfig.json",
+    "index-generator": "ctix create -p ./tsconfig.build.json --config ../../.ctirc",
+    "pre-commit": "git diff HEAD --exit-code --stat --relative -- *.ts > nul || npm run index-generator && git add \"**/index.ts\""
+  },
+  "engines": {
+    "node": ">= 22",
+    "npm": ">= 10"
+  },
+  "keywords": [],
+  "author": "yoavain",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/types": "29.6.3",
+    "@tsconfig/node22": "22.0.1",
+    "@types/jest": "29.5.14",
+    "@types/node": "22.14.1",
+    "ctix": "1.8.3",
+    "eslint": "9.32.0",
+    "jest": "29.7.0",
+    "jest-junit": "16.0.0",
+    "rimraf": "6.0.1",
+    "ts-jest": "29.3.2",
+    "ts-node": "10.9.2",
+    "typedoc": "0.27.9",
+    "typescript": "5.8.3"
+  },
+  "dependencies": {
+  }
+}
