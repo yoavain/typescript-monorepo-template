@@ -118,6 +118,7 @@ export default [...fixupConfigRules(compat.extends(
         "@typescript-eslint/no-use-before-define": "warn",
         "@typescript-eslint/no-var-requires": "warn",
         "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+        "@typescript-eslint/explicit-function-return-type": "error",
         // Style
         "max-len": ["error", { "code": 200 }],
         "indent": ["error", 4, { "SwitchCase": 1 }],
