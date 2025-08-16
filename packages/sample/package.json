@@ -32,7 +32,7 @@
         "@jest/types": "30.0.5",
         "@tsconfig/node22": "22.0.1",
         "@types/jest": "30.0.0",
-        "@types/node": "22.17.1",
+        "@types/node": "22.17.2",
         "ctix": "1.8.3",
         "eslint": "9.33.0",
         "jest": "30.0.5",
