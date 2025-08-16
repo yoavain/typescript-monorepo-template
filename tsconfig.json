@@ -1,7 +1,6 @@
 {
     "extends": "@tsconfig/node22",
     "compilerOptions": {
-//        "target": "es6",
         "rootDir": ".",
         "strict": true,
         "allowJs": true,
@@ -14,6 +13,6 @@
         "noImplicitOverride": true,
         "noUncheckedIndexedAccess": true
     },
-    "include": ["scripts/**/*", "jest.config.ts"],
+    "include": ["scripts/**/*", "jest.config.ts", "*.js"],
     "exclude": ["node_modules"]
 }
