@@ -1,16 +1,18 @@
 {
     "extends": "@tsconfig/node22",
     "compilerOptions": {
-        "target": "es6",
+//        "target": "es6",
+        "rootDir": ".",
         "strict": true,
         "allowJs": true,
-        "rootDir": ".",
-        "declaration": true,
         "verbatimModuleSyntax": false,
-        "sourceMap": true,
         "forceConsistentCasingInFileNames": true,
         "noEmit": true,
-        "isolatedModules": true
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "moduleDetection": "force",
+        "noImplicitOverride": true,
+        "noUncheckedIndexedAccess": true
     },
     "include": ["scripts/**/*", "jest.config.ts"],
     "exclude": ["node_modules"]
