@@ -1,15 +1,25 @@
-import path from "path";
-const util = require("util");
-const exec = util.promisify(require("child_process").exec);
+import path from "node:path";
+import { promisify } from "node:util";
+import { exec as asyncExec } from "node:child_process";
 
-const updateVersionsFromLerna = async () => {
+const exec = promisify(asyncExec);
+
+const updateVersionsFromLerna = async (): Promise<void> => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const lernaJson = require(path.resolve(__dirname, "..", "lerna.json"));
     const lernaVersion: string = lernaJson.version;
-    const { stdout, stderr } = await exec(
+    await exec(
         `lerna version ${lernaVersion} --yes --exact --no-push --no-git-tag-version --no-commit-hooks --allow-branch=*`,
         { cwd: path.resolve(__dirname, "..") }
     );
-    console.log(JSON.stringify({ stdout: stdout, stderr: stderr }));
+    await exec(
+        `npm version ${lernaVersion} -git-tag-version=false`,
+        { cwd: path.resolve(__dirname, "..") }
+    );
+    await exec(
+        "git add package*.json",
+        { cwd: path.resolve(__dirname, "..") }
+    );
 };
 
 updateVersionsFromLerna().catch(console.error);
