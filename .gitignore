@@ -6,3 +6,4 @@
 **/*.tsbuildinfo
 /.eslint-cache/
 /.nx/
+/.junie/
